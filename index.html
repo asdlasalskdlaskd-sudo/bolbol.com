@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BolBol.com</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+nav{
+    background:#1a1a1a;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#7c3aed;
+}
+
+.cart{
+    background:#7c3aed;
+    padding:10px 20px;
+    border-radius:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#ccc;
+}
+
+.tabs{
+    text-align:center;
+    margin:30px;
+}
+
+.tabs button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    background:#222;
+    color:white;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.image{
+    height:250px;
+}
+
+.image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.content{
+    padding:15px;
+}
+
+.price{
+    color:#00d4ff;
+    margin:10px 0;
+}
+
+.buy{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#7c3aed;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.special{
+    border:2px solid gold;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#999;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">BolBol.com</div>
+    <div class="cart">
+        Cart: <span id="cart">0</span>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>BolBol Clothing</h1>
+    <p>Premium Shirts, Hoodies & Exclusive Drops</p>
+</section>
+
+<section class="tabs">
+    <button onclick="showAll()">All</button>
+</section>
+
+<section class="products">
+
+    <!-- Shirt 1 -->
+    <div class="card">
+        <div class="image">
+            <img src="https://picsum.photos/500/600?1">
+        </div>
+        <div class="content">
+            <h3>Classic Black Shirt</h3>
+            <div class="price">$39</div>
+            <button class="buy" onclick="addCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <!-- Shirt 2 -->
+    <div class="card">
+        <div class="image">
+            <img src="https://picsum.photos/500/600?2">
+        </div>
+        <div class="content">
+            <h3>Urban White Shirt</h3>
+            <div class="price">$42</div>
+            <button class="buy" onclick="addCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <!-- Shirt 3 -->
+    <div class="card">
+        <div class="image">
+            <img src="https://picsum.photos/500/600?3">
+        </div>
+        <div class="content">
+            <h3>Premium Tee</h3>
+            <div class="price">$45</div>
+            <button class="buy" onclick="addCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <!-- Hoodie 1 -->
+    <div class="card">
+        <div class="image">
+            <img src="https://picsum.photos/500/600?4">
+        </div>
+        <div class="content">
+            <h3>Shadow Hoodie</h3>
+            <div class="price">$69</div>
+            <button class="buy" onclick="addCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <!-- Hoodie 2 -->
+    <div class="card">
+        <div class="image">
+            <img src="https://picsum.photos/500/600?5">
+        </div>
+        <div class="content">
+            <h3>Storm Hoodie</h3>
+            <div class="price">$72</div>
+            <button class="buy" onclick="addCart()">Add To Cart</button>
+        </div>
+    </div>
+
+    <!-- SPECIAL PRODUCT -->
+    <div class="card special">
+
+        <div class="image">
+            <img src="beautiful picture.webp" alt="DIL">
+        </div>
+
+        <div class="content">
+            <h3>DIL - Limited Edition 🔥</h3>
+            <div class="price">$199</div>
+
+            <p style="margin-bottom:15px;">
+                Exclusive luxury release.
+            </p>
+
+            <button class="buy" onclick="addCart()">
+                Add To Cart
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 BolBol.com
+</footer>
+
+<script>
+let count = 0;
+
+function addCart(){
+    count++;
+    document.getElementById("cart").innerText = count;
+}
+</script>
+
+</body>
+</html>
